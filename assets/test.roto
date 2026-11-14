@@ -1,0 +1,16 @@
+fn a_fnc() -> f32 {
+    42.0
+}
+
+fn handle_an_event(e: Entity, cnt: u32) -> List[RotoInstruction] {
+    let c = cnt %4;
+    if c == 0 {
+        return [RotoInstruction.insert_a(e, cnt.into_f32() * 0.1)];
+    } else if c == 1 {
+        return [RotoInstruction.insert_b(e)];
+    } else if c == 2 {
+        return [RotoInstruction.remove_a(e)];
+    } else {
+        return [RotoInstruction.remove_b(e)];
+    }
+}
